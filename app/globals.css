@@ -1,0 +1,313 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: #050509;
+  color: #f9fafb;
+  overflow-x: hidden;
+}
+
+/* Underground rave aesthetic */
+.rave-glow {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+.pulse-border {
+  animation: pulseBorder 2s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0%, 100% {
+    border-color: rgba(249, 115, 22, 0.5);
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    border-color: rgba(249, 115, 22, 1);
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+  }
+}
+
+.strobe-text {
+  animation: strobeText 3s ease-in-out infinite;
+}
+
+@keyframes strobeText {
+  0%, 90%, 100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.7;
+  }
+}
+
+/* Extreme glitch effect */
+.glitch-text {
+  position: relative;
+  animation: glitchSkew 0.5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch-text::before {
+  animation: glitchTop 0.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  color: #ff0000;
+  text-shadow: 
+    -2px 0 #00ffff,
+    2px 2px #ff00ff;
+}
+
+.glitch-text::after {
+  animation: glitchBottom 0.7s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  color: #00ffff;
+  text-shadow: 
+    2px 0 #ff0000,
+    -2px -2px #ffff00;
+}
+
+@keyframes glitchTop {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(5px, -5px);
+  }
+  40% {
+    transform: translate(5px, 5px);
+  }
+  60% {
+    transform: translate(-5px, -5px);
+  }
+  80% {
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchSkew {
+  0% {
+    transform: skew(0deg);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: skew(-5deg);
+    filter: hue-rotate(-10deg);
+  }
+  20% {
+    transform: skew(5deg);
+    filter: hue-rotate(10deg);
+  }
+  30% {
+    transform: skew(-3deg);
+    filter: hue-rotate(-5deg);
+  }
+  40% {
+    transform: skew(3deg);
+    filter: hue-rotate(5deg);
+  }
+  50% {
+    transform: skew(0deg) scale(1.02);
+    filter: hue-rotate(0deg);
+  }
+  60% {
+    transform: skew(-2deg);
+    filter: hue-rotate(-8deg);
+  }
+  70% {
+    transform: skew(2deg);
+    filter: hue-rotate(8deg);
+  }
+  80% {
+    transform: skew(-1deg);
+    filter: hue-rotate(-3deg);
+  }
+  90% {
+    transform: skew(1deg) scale(0.98);
+    filter: hue-rotate(3deg);
+  }
+  100% {
+    transform: skew(0deg);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Button styles with rave energy */
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  border: 2px solid #f97316;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-primary:hover::before {
+  left: 100%;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 25px rgba(249, 115, 22, 0.4),
+    0 0 15px rgba(249, 115, 22, 0.6);
+  border-color: #fbbf24;
+  animation: buttonGlitch 2s infinite;
+}
+
+@keyframes buttonGlitch {
+  0%, 90%, 100% {
+    transform: translateY(-2px);
+  }
+  92% {
+    transform: translateY(-2px) translateX(-1px);
+  }
+  94% {
+    transform: translateY(-2px) translateX(1px);
+  }
+  96% {
+    transform: translateY(-2px) translateX(-1px);
+  }
+  98% {
+    transform: translateY(-2px) translateX(1px);
+  }
+}
+
+/* Section styles */
+.section {
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.section-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dark grid background for underground feel */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(249, 115, 22, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Hero image overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg, 
+    rgba(5, 5, 9, 0.7) 0%, 
+    rgba(249, 115, 22, 0.2) 50%, 
+    rgba(5, 5, 9, 0.8) 100%
+  );
+}
+
+/* Gallery image hover effects */
+.gallery-image {
+  transition: all 0.3s ease;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.2);
+  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.3);
+}
+
+/* Text effects */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading animations */
+.loading-pulse {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  .button-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}

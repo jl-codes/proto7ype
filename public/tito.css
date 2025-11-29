@@ -1,0 +1,186 @@
+/* public/tito.css */
+/* Custom theming for Tito widget in the dark PROTO7YPE underground vibe */
+
+.tito-ticket-form,
+.tito-wrapper {
+  background: #050509 !important;
+  color: #f9fafb !important;
+  border-radius: 1rem !important;
+  border: 2px solid #27272a !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.2) !important;
+}
+
+.tito-ticket-list {
+  background: transparent !important;
+}
+
+.tito-ticket-type {
+  background: rgba(24, 24, 27, 0.5) !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  padding: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.tito-ticket-type:hover {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.tito-ticket-type:last-child {
+  margin-bottom: 0 !important;
+}
+
+.tito-ticket-type-name {
+  font-weight: 600 !important;
+  color: #f9fafb !important;
+  font-size: 1.1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.tito-ticket-type-description {
+  color: #d1d5db !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.5rem !important;
+}
+
+.tito-ticket-price {
+  color: #f97316 !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+}
+
+.tito-ticket-price-currency {
+  color: #fbbf24 !important;
+}
+
+.tito-ticket-quantity {
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 0.5rem !important;
+  color: #f9fafb !important;
+  padding: 0.5rem !important;
+}
+
+.tito-ticket-quantity:focus {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2) !important;
+  outline: none !important;
+}
+
+/* Buttons */
+.tito-btn,
+.tito-submit-wrapper button {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%) !important;
+  border: 2px solid #f97316 !important;
+  border-radius: 9999px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.tito-btn:hover,
+.tito-submit-wrapper button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4) !important;
+  border-color: #fbbf24 !important;
+}
+
+/* Form inputs */
+.tito-discount-code-field,
+.tito-form input[type="text"],
+.tito-form input[type="email"] {
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 0.5rem !important;
+  color: #f9fafb !important;
+  padding: 0.75rem !important;
+  font-size: 0.875rem !important;
+}
+
+.tito-discount-code-field:focus,
+.tito-form input:focus {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2) !important;
+  outline: none !important;
+}
+
+/* Labels and text */
+.tito-form label {
+  color: #d1d5db !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em !important;
+}
+
+.tito-ticket-available {
+  color: #10b981 !important;
+  font-weight: 600 !important;
+}
+
+.tito-ticket-sold-out {
+  color: #ef4444 !important;
+  font-weight: 600 !important;
+}
+
+/* Error messages */
+.tito-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid #ef4444 !important;
+  border-radius: 0.5rem !important;
+  color: #fca5a5 !important;
+  padding: 0.75rem !important;
+}
+
+/* Success messages */
+.tito-success {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid #10b981 !important;
+  border-radius: 0.5rem !important;
+  color: #6ee7b7 !important;
+  padding: 0.75rem !important;
+}
+
+/* Loading states */
+.tito-loading {
+  background: rgba(249, 115, 22, 0.1) !important;
+  border-radius: 0.5rem !important;
+  animation: loadingPulse 1.5s ease-in-out infinite !important;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Hide Tito branding for cleaner look */
+.tito-badge {
+  display: none !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .tito-ticket-form,
+  .tito-wrapper {
+    padding: 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .tito-btn,
+  .tito-submit-wrapper button {
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+}
