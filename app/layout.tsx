@@ -1,6 +1,13 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
+import { Audiowide } from "next/font/google";
+
+const audiowide = Audiowide({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "PROTO7YPE | Exclusive Immersive Penthouse Afters SF",
@@ -29,7 +36,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className="bg-black text-white min-h-screen">
+      <body className={`${audiowide.className} bg-black text-white min-h-screen`}>
         <div className="min-h-screen flex flex-col grid-bg">
           {/* Header */}
           <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-6 flex items-center justify-between transition-all duration-300">

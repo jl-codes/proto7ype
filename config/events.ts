@@ -15,15 +15,15 @@ export type EventMeta = {
 };
 
 export const currentEvent: EventMeta = {
-  slug: "sound-session-jan-2025",
-  title: "Sound Session @ PROTO7YPE",
-  tagline: "Built for people who move with the music: pulsating low-end, strobing light, and rhythm.",
-  date: "January 25, 2025",
+  slug: "techno-afters-proto7ype",
+  title: "Techno Afters @ PROTO7YPE",
+  tagline: "Late-night techno afterparty in San Francisco. Underground electronic music until 4AM.",
+  date: "December 13, 2025",
   time: "10:00 PM – 4:00 AM",
   city: "San Francisco, CA",
   titoEventSlug:
     process.env.NEXT_PUBLIC_TITO_EVENT_SLUG_CURRENT ||
-    "proto7ype/sound-session-jan-2025",
+    "proto7ype/techno-afters-proto7ype",
   heroImage: "/images/hero-space.jpg",
   galleryImages: [
     "/images/crowd-1.jpg",
@@ -31,7 +31,7 @@ export const currentEvent: EventMeta = {
     "/images/crowd-2.jpg",
     "/images/lights-1.jpg",
   ],
-  musicGenres: ["Trap", "House", "Bass", "Techno"],
+  musicGenres: ["Techno", "Hard Techno", "Industrial", "Minimal"],
   features: [
     "Immersive lighting",
     "Heavy sound system presence", 

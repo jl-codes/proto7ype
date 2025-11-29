@@ -48,7 +48,7 @@ export default function HeroSection() {
         </p>
 
         {/* Music genres - Curated selection */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-16 mb-16">
           {["TRAP", "INDUSTRIAL", "GOTH", "TECHNO"].map((genre) => (
             <span
               key={genre}

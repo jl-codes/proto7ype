@@ -63,13 +63,13 @@ export default function TicketsPage() {
               <div className="bg-zinc-900/50 border border-zinc-700 rounded-xl p-6 text-center rave-glow">
                 <div className="text-orange-400 font-bold text-sm uppercase tracking-wider mb-2">Early Energy</div>
                 <div className="text-3xl font-bold text-white mb-2">$30</div>
-                <div className="text-zinc-400 text-sm">First 100 tickets</div>
+                <div className="text-zinc-400 text-sm">First 80 tickets</div>
                 <div className="text-xs text-zinc-500 mt-2">For the early movers</div>
               </div>
               <div className="bg-zinc-900/50 border border-zinc-700 rounded-xl p-6 text-center rave-glow">
                 <div className="text-orange-400 font-bold text-sm uppercase tracking-wider mb-2">Peak Vibes</div>
                 <div className="text-3xl font-bold text-white mb-2">$40</div>
-                <div className="text-zinc-400 text-sm">Next 100 tickets</div>
+                <div className="text-zinc-400 text-sm">Next 80 tickets</div>
                 <div className="text-xs text-zinc-500 mt-2">When energy builds</div>
               </div>
               <div className="bg-zinc-900/50 border border-zinc-700 rounded-xl p-6 text-center rave-glow">

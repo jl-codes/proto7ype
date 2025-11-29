@@ -11,11 +11,17 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  /* Audiowide is now applied via Next.js font in layout.tsx */
   background: #050509;
   color: #f9fafb;
   overflow-x: hidden;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* Enhanced letter spacing for headers */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.05em;
 }
 
 /* Underground rave aesthetic */
