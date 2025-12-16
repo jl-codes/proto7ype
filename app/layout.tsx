@@ -1,8 +1,8 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Audiowide } from "next/font/google";
+import { HeaderNav } from "@/components/HeaderNav";
 
 const audiowide = Audiowide({
   weight: '400',
@@ -40,36 +40,19 @@ export default function RootLayout({
       <body className={`${audiowide.className} bg-black text-white min-h-screen`}>
         <div className="min-h-screen flex flex-col grid-bg">
           {/* Header */}
-          <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-6 flex items-center justify-between transition-all duration-300">
+          <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 md:px-12 py-10 md:py-12 flex items-center justify-between transition-all duration-300">
             {/* Glassmorphism background container - separate to allow content to float effectively */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-md border-b border-white/5"></div>
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-md border-b border-white/10"></div>
             
             {/* Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto flex items-center justify-between">
-              <div className="font-black text-xl tracking-[0.2em] italic bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-orange-500">
+            <div className="relative z-10 w-full flex flex-wrap items-center justify-between gap-4">
+              <div className="shrink-0 font-black text-2xl sm:text-3xl md:text-4xl tracking-[0.2em] italic bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-orange-500">
                 PROTO7YPE
               </div>
-              
-              <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 md:gap-8">
-                <Link
-                  href="/"
-                  className="px-3 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-zinc-200 hover:text-white hover:bg-white/5 transition-all duration-300"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/games"
-                  className="px-3 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-zinc-200 hover:text-white hover:bg-white/5 transition-all duration-300"
-                >
-                  Games
-                </Link>
-                <Link
-                  href="/tickets"
-                  className="px-4 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-black bg-white hover:bg-orange-500 transition-all duration-300 rounded-none skew-x-[-12deg]"
-                >
-                  <span className="skew-x-[12deg] inline-block">Tickets</span>
-                </Link>
-              </nav>
+
+              <div className="w-full sm:flex-1 sm:flex sm:justify-end">
+                <HeaderNav />
+              </div>
             </div>
           </header>
 

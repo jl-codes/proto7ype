@@ -48,11 +48,11 @@ export default function HeroSection() {
         </p>
 
         {/* Music genres - Curated selection */}
-        <div className="flex flex-wrap justify-center gap-16 mb-16">
-          {["TRAP", "INDUSTRIAL", "GOTH", "TECHNO"].map((genre) => (
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 sm:gap-x-12 sm:gap-y-8 lg:gap-x-16 mb-16">
+          {["TRAP", "INDUSTRIAL", "EDM", "GOTH", "TECHNO"].map((genre) => (
             <span
               key={genre}
-              className="inline-block px-10 py-4 bg-black/40 border-2 border-pink-500/30 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
+              className="inline-block min-w-[9rem] px-5 py-3 sm:px-8 sm:py-4 lg:px-10 bg-black/40 border-2 border-pink-500/30 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
             >
               <span className="inline-block transform skew-x-[5deg]">{genre}</span>
             </span>

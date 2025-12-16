@@ -97,8 +97,7 @@ tito-widget .tito-ticket-type,
 /* Quantity Input Fields */
 .tito-ticket-quantity,
 .tito-ticket-type input[type="number"],
-.tito-ticket-type .tito-ticket-quantity input,
-input[type="number"] {
+.tito-ticket-type .tito-ticket-quantity input {
   background: #18181b !important;
   border: 2px solid #3f3f46 !important;
   border-radius: 0.5rem !important;
@@ -112,8 +111,7 @@ input[type="number"] {
   transition: all 0.2s ease !important;
 }
 
-.tito-ticket-quantity:focus,
-input[type="number"]:focus {
+.tito-ticket-quantity:focus {
   border-color: #ec4899 !important;
   box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2) !important;
   outline: none !important;
@@ -173,8 +171,7 @@ button[class*="quantity"]:disabled:hover {
 /* Continue Button and Submit Buttons */
 .tito-btn,
 .tito-submit-wrapper button,
-.tito-submit,
-button[type="submit"] {
+.tito-submit {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #be185d 100%) !important;
   border: 2px solid #ec4899 !important;
   border-radius: 9999px !important;
@@ -191,8 +188,7 @@ button[type="submit"] {
 
 .tito-btn:hover,
 .tito-submit-wrapper button:hover,
-.tito-submit:hover,
-button[type="submit"]:hover {
+.tito-submit:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 10px 30px rgba(236, 72, 153, 0.5) !important;
   border-color: #f9a8d4 !important;
@@ -200,15 +196,13 @@ button[type="submit"]:hover {
 }
 
 .tito-btn:active,
-.tito-submit-wrapper button:active,
-button[type="submit"]:active {
+.tito-submit-wrapper button:active {
   transform: translateY(0) !important;
   box-shadow: 0 2px 10px rgba(236, 72, 153, 0.4) !important;
 }
 
 /* Disabled button state */
-.tito-btn:disabled,
-button[type="submit"]:disabled {
+.tito-btn:disabled {
   background: #3f3f46 !important;
   border-color: #52525b !important;
   color: #71717a !important;
@@ -217,8 +211,7 @@ button[type="submit"]:disabled {
   box-shadow: none !important;
 }
 
-.tito-btn:disabled:hover,
-button[type="submit"]:disabled:hover {
+.tito-btn:disabled:hover {
   transform: none !important;
 }
 
