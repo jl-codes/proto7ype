@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Underground rave aesthetic */
 .rave-glow {
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
 }
 
 .pulse-border {
@@ -35,12 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes pulseBorder {
   0%, 100% {
-    border-color: rgba(249, 115, 22, 0.5);
-    box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
   }
   50% {
-    border-color: rgba(249, 115, 22, 1);
-    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+    border-color: rgba(236, 72, 153, 1);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
   }
 }
 
@@ -188,8 +188,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: 1rem 2rem;
   border-radius: 9999px;
-  border: 2px solid #f97316;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  border: 2px solid #ec4899;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #be185d 100%);
   color: white;
   font-weight: 600;
   font-size: 0.875rem;
@@ -219,9 +219,9 @@ h1, h2, h3, h4, h5, h6 {
 .button-primary:hover {
   transform: translateY(-2px);
   box-shadow: 
-    0 10px 25px rgba(249, 115, 22, 0.4),
-    0 0 15px rgba(249, 115, 22, 0.6);
-  border-color: #fbbf24;
+    0 10px 25px rgba(236, 72, 153, 0.4),
+    0 0 15px rgba(236, 72, 153, 0.6);
+  border-color: #f9a8d4;
   animation: buttonGlitch 2s infinite;
 }
 
@@ -257,8 +257,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Dark grid background for underground feel */
 .grid-bg {
   background-image: 
-    linear-gradient(rgba(249, 115, 22, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(236, 72, 153, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
@@ -267,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(
     135deg, 
     rgba(5, 5, 9, 0.7) 0%, 
-    rgba(249, 115, 22, 0.2) 50%, 
+    rgba(236, 72, 153, 0.2) 50%, 
     rgba(5, 5, 9, 0.8) 100%
   );
 }
@@ -281,12 +281,12 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-image:hover {
   transform: scale(1.05);
   filter: brightness(1) contrast(1.2);
-  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 15px 35px rgba(236, 72, 153, 0.3);
 }
 
 /* Text effects */
 .gradient-text {
-  background: linear-gradient(135deg, #f97316, #fbbf24);
+  background: linear-gradient(135deg, #ec4899, #f9a8d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -18,7 +18,7 @@ export const currentEvent: EventMeta = {
   slug: "techno-afters-proto7ype",
   title: "Techno Afters @ PROTO7YPE",
   tagline: "Late-night techno afterparty in San Francisco. Underground electronic music until 4AM.",
-  date: "December 13, 2025",
+  date: "January 17, 2026",
   time: "10:00 PM – 4:00 AM",
   city: "San Francisco, CA",
   titoEventSlug:
@@ -38,5 +38,29 @@ export const currentEvent: EventMeta = {
     "Designated chill + decompression areas",
     "Hot food station + late-night snacks",
     "Non-alcoholic refreshments + hydration support"
+  ],
+};
+
+// Games Night event configuration
+// Event URL: https://ti.to/proto7ype/proto7ype-poker
+// Add new Thursday releases in Tito dashboard - they auto-appear on the /games page
+export const gamesNightEvent: EventMeta = {
+  slug: "proto7ype-poker",
+  title: "Games Night at PROTO7YPE",
+  tagline: "Daily Membership for access + hosted games of skill.",
+  date: "Thursdays",
+  time: "7:00 PM",
+  city: "San Francisco, CA",
+  titoEventSlug:
+    process.env.NEXT_PUBLIC_TITO_EVENT_SLUG_GAMES ||
+    "proto7ype/proto7ype-poker",
+  heroImage: "/images/hero-space.jpg",
+  galleryImages: [],
+  musicGenres: [], // Not applicable for Games Night
+  features: [
+    "Access to PROTO7YPE during the event window",
+    "Hosted tables and tournament-style formats (no cash wagering)",
+    "Community, music, and a smooth check-in flow",
+    "Optional VIP seating and guest passes (if available)"
   ],
 };

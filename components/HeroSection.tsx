@@ -32,7 +32,7 @@ export default function HeroSection() {
             alt="PROTO7YPE Logo"
             className="w-[150px] lg:w-[250px] h-auto"
             style={{
-              filter: 'drop-shadow(0 0 20px rgba(249, 115, 22, 0.4)) drop-shadow(0 0 40px rgba(249, 115, 22, 0.2))',
+              filter: 'drop-shadow(0 0 20px rgba(236, 72, 153, 0.4)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.2))',
             }}
           />
         </div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
         
         {/* Tagline */}
         <p className="text-2xl lg:text-3xl text-zinc-200 mb-12 font-light tracking-wide">
-          SAN FRANCISCO'S EXCLUSIVE <span className="text-orange-500 font-bold">XR PENTHOUSE</span>
+          SAN FRANCISCO&apos;S EXCLUSIVE <span className="text-pink-500 font-bold">XR PENTHOUSE</span>
         </p>
 
         {/* Music genres - Curated selection */}
@@ -52,7 +52,7 @@ export default function HeroSection() {
           {["TRAP", "INDUSTRIAL", "GOTH", "TECHNO"].map((genre) => (
             <span
               key={genre}
-              className="inline-block px-10 py-4 bg-black/40 border-2 border-orange-500/30 backdrop-blur-sm transform skew-x-[-5deg] text-orange-400 font-bold text-xs tracking-wider hover:bg-orange-500/10 hover:border-orange-500/50 transition-all cursor-default"
+              className="inline-block px-10 py-4 bg-black/40 border-2 border-pink-500/30 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
             >
               <span className="inline-block transform skew-x-[5deg]">{genre}</span>
             </span>
@@ -64,14 +64,24 @@ export default function HeroSection() {
           <p className="text-zinc-300 text-lg lg:text-xl leading-loose font-light">
             A visceral audio-visual experience high above the city. <br/>
             Skyline views. Immersive Extended Reality. 4AM Energy. <br/>
-            <span className="text-orange-500/80 text-xs uppercase tracking-widest mt-6 block border-t border-white/10 pt-6 w-fit mx-auto px-8">Location revealed upon entry confirmation</span>
+            <span className="text-pink-500/80 text-xs uppercase tracking-widest mt-6 block border-t border-white/10 pt-6 w-fit mx-auto px-8">Location revealed upon entry confirmation</span>
           </p>
         </div>
 
-        {/* Main CTA */}
-        <div className="space-y-4">
-          <Link href="/tickets" className="button-primary inline-block text-xl px-12 py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200">
-            SECURE ACCESS
+        {/* Main CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <Link
+            href="/tickets"
+            className="button-primary inline-block text-xl px-12 py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200"
+          >
+            AFTERS SHOWS
+          </Link>
+
+          <Link
+            href="/games"
+            className="button-primary inline-block text-xl px-12 py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200"
+          >
+            GAMES NIGHT
           </Link>
         </div>
       </div>
@@ -86,8 +96,8 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-orange-400/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-orange-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-pink-400/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-pink-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

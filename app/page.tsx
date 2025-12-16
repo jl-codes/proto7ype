@@ -19,7 +19,7 @@ export default function HomePage() {
               <span className="gradient-text">A GLITCH IN THE SIMULATION</span>
             </h2>
             <p className="text-xl text-zinc-300 mb-10 leading-relaxed font-light">
-              This isn't a tech demo. It's an audiovisual override. <br/>
+              This isn&apos;t a tech demo. It&apos;s an audiovisual override. <br/>
               State-of-the-art XR projection mapping. Reactive visual environments. High-fidelity industrial sound. <br/>
               <span className="text-orange-400 font-medium block mt-4">We are redefining the San Francisco underground.</span>
             </p>

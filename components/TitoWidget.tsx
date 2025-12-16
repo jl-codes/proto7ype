@@ -142,7 +142,7 @@ export default function TitoWidget({ eventSlug }: TitoWidgetProps) {
       {/* Enhanced wrapper with better styling */}
       <div className="bg-zinc-900/50 rounded-2xl border-2 border-zinc-800 p-6 backdrop-blur-sm shadow-2xl">
         {/* Tito widget element */}
-        {/* @ts-ignore - tito-widget is a custom element from Tito's script */}
+        {/* @ts-expect-error - tito-widget is a custom element from Tito's script */}
         <tito-widget event={eventSlug}></tito-widget>
       </div>
       

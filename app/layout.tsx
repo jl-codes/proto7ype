@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Audiowide } from "next/font/google";
 
 const audiowide = Audiowide({
@@ -49,19 +50,25 @@ export default function RootLayout({
                 PROTO7YPE
               </div>
               
-              <nav className="flex items-center gap-8">
-                <a 
-                  href="/" 
-                  className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors duration-300"
+              <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 md:gap-8">
+                <Link
+                  href="/"
+                  className="px-3 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-zinc-200 hover:text-white hover:bg-white/5 transition-all duration-300"
                 >
                   Home
-                </a>
-                <a 
-                  href="/tickets" 
-                  className="text-xs font-bold uppercase tracking-[0.2em] text-black bg-white hover:bg-orange-500 transition-all duration-300 px-6 py-2 rounded-none skew-x-[-12deg]"
+                </Link>
+                <Link
+                  href="/games"
+                  className="px-3 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-zinc-200 hover:text-white hover:bg-white/5 transition-all duration-300"
+                >
+                  Games
+                </Link>
+                <Link
+                  href="/tickets"
+                  className="px-4 py-2 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-black bg-white hover:bg-orange-500 transition-all duration-300 rounded-none skew-x-[-12deg]"
                 >
                   <span className="skew-x-[12deg] inline-block">Tickets</span>
-                </a>
+                </Link>
               </nav>
             </div>
           </header>

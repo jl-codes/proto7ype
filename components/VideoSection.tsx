@@ -19,11 +19,20 @@ export default function VideoSection() {
       <div className="section-wide">
         <div className="text-center mb-8">
           <h2 className="text-4xl lg:text-6xl font-bold mb-4 strobe-text">
-            <span className="gradient-text">IMMERSIVE SESSIONS</span>
+            <span className="gradient-text">UNDERGROUND EXPERIENCES</span>
           </h2>
           <p className="text-xl text-zinc-300 max-w-3xl mx-auto font-light">
-            Real energy from our XR-enhanced afters. When the simulation breaks and the rhythm takes over.
+            PROTO7YPE is a high-energy, immersive venue in San Francisco featuring XR visual environments, late-night afters, and hosted Games Night events.
           </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/tickets" className="button-primary inline-block text-base px-10 py-4">
+              Afters Shows
+            </a>
+            <a href="/games" className="button-primary inline-block text-base px-10 py-4">
+              Games Night
+            </a>
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -66,49 +75,57 @@ export default function VideoSection() {
             </div>
           </div>
 
-          {/* Video description with attitude */}
+            {/* Video description with attitude */}
           <div className="mt-12 text-center">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">🔥</div>
+                <div className="text-3xl mb-3">🌀</div>
                 <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  Pure Chaos
+                  XR Visual Worlds
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  "You good bro?" - the exact energy we're bringing to PROTO7YPE sound sessions
+                  Projection mapping + reactive environments that turn the room into a living system.
                 </p>
               </div>
               <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">⚡</div>
+                <div className="text-3xl mb-3">🔊</div>
                 <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  SF Underground
+                  Afters Shows
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  Real scenes from San Francisco after parties where the music actually moves people
+                  Late-night sets, high-fidelity sound, and a respect-first room built for serious energy.
                 </p>
               </div>
               <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">🎵</div>
+                <div className="text-3xl mb-3">♠️</div>
                 <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  Move With Music
+                  Games Night
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  This is what happens when beat, bass, and body become one unified energy
+                  Hosted tables and tournament-style formats as part of private social club access.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Call to action with urgency */}
+          {/* Call to action */}
           <div className="text-center mt-12">
             <div className="bg-zinc-900/30 border border-orange-500/30 rounded-2xl p-8 rave-glow">
-              <h3 className="text-3xl font-bold mb-4 gradient-text">Be part of this energy</h3>
-              <p className="text-zinc-200 mb-6 text-lg">
-                Ready to lose yourself in the rhythm like this? PROTO7YPE sound sessions start January 25th.
+              <h3 className="text-3xl font-bold mb-4 gradient-text">Choose your experience</h3>
+              <p className="text-zinc-200 mb-8 text-lg">
+                Explore upcoming afters shows, or grab a Daily Membership for Games Night.
               </p>
-              <a href="/tickets" className="button-primary inline-block text-lg px-8 py-4">
-                Secure Your Spot
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/tickets" className="button-primary inline-block text-lg px-10 py-4">
+                  Afters Shows
+                </a>
+                <a href="/games" className="button-primary inline-block text-lg px-10 py-4">
+                  Games Night
+                </a>
+              </div>
+              <p className="text-xs text-zinc-500 mt-6 max-w-2xl mx-auto">
+                PROTO7YPE is based in San Francisco. Event details and venue address are shared after purchase.
+              </p>
             </div>
           </div>
         </div>
