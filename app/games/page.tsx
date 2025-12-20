@@ -102,37 +102,41 @@ export default function GamesPage() {
             <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
               <span className="gradient-text">Poker Tournament Night at PROTO7YPE</span>
             </h1>
-            <p className="text-xl lg:text-3xl text-zinc-300 mb-8 font-semibold">
-              Sunday poker tournaments • Games of skill • San Francisco
-            </p>
+            <div
+              className="mx-auto mb-10 max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_0_80px_rgba(236,72,153,0.18)]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.25), rgba(0,0,0,0.80)), url(/images/PROTO7YPE-Poker-Sunday-Game-Night.webp)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="relative px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+                {/* Neon glow */}
+                <div className="pointer-events-none absolute -inset-10 opacity-90 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.22),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.22),transparent_55%)]" />
 
-            {/* Ambient translucent artwork panel */}
-            <div className="mx-auto mb-10 max-w-6xl">
-              <div
-                className="relative h-[260px] sm:h-[340px] lg:h-[400px] overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_0_80px_rgba(236,72,153,0.18)]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.30), rgba(0,0,0,0.70)), url(/images/PROTO7YPE-Poker-Sunday-Game-Night.webp)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="absolute -inset-8 opacity-90 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.22),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.20),transparent_55%)]" />
+                {/* Glass card content */}
+                <div className="relative mx-auto max-w-3xl rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md p-6 sm:p-8">
+                  <p className="text-xl lg:text-3xl text-zinc-200 mb-6 font-semibold">
+                    Sunday poker tournaments • Games of skill • San Francisco
+                  </p>
+
+                  <p className="text-lg lg:text-xl text-zinc-200/90 mb-6 max-w-2xl mx-auto leading-relaxed">
+                    Join us every <span className="text-pink-300 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
+                  </p>
+                  <p className="text-base lg:text-lg text-zinc-200/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Tickets are <span className="text-pink-300 font-bold">$40</span>.
+                  </p>
+
+                  <a
+                    href="#checkout"
+                    className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
+                  >
+                    Get Tickets ($40)
+                  </a>
+                </div>
               </div>
             </div>
-
-            <p className="text-lg lg:text-xl text-zinc-400 mb-6 max-w-2xl mx-auto leading-relaxed">
-              Join us every <span className="text-pink-400 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
-            </p>
-            <p className="text-base lg:text-lg text-zinc-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Tickets are <span className="text-pink-400 font-bold">$40</span>.
-            </p>
-            <a 
-              href="#checkout" 
-              className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
-            >
-              Get Tickets ($40)
-            </a>
           </div>
         </div>
 
