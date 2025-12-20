@@ -106,15 +106,17 @@ export default function GamesPage() {
               Sunday poker tournaments • Games of skill • San Francisco
             </p>
 
-            <div className="mx-auto mb-8 max-w-xl">
-              <Image
-                src="/images/PROTO7YPE-Poker-Sunday-Game-Night.webp"
-                alt="Poker tournament night at PROTO7YPE in San Francisco"
-                width={1024}
-                height={1024}
-                priority
-                className="h-auto w-full rounded-2xl border border-zinc-800 shadow-2xl"
-              />
+            <div className="mx-auto mb-5 max-w-xl">
+              <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 shadow-2xl max-h-[260px] sm:max-h-[320px] lg:max-h-[380px]">
+                <Image
+                  src="/images/PROTO7YPE-Poker-Sunday-Game-Night.webp"
+                  alt="Poker tournament night at PROTO7YPE in San Francisco"
+                  width={1024}
+                  height={1024}
+                  priority
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
             </div>
             <p className="text-lg lg:text-xl text-zinc-400 mb-6 max-w-2xl mx-auto leading-relaxed">
               Join us every <span className="text-pink-400 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
