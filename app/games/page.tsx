@@ -4,34 +4,11 @@ import { gamesNightEvent } from "../../config/events";
 import TitoWidget from "../../components/TitoWidget";
 
 export const metadata = {
-  title: "Poker Tournament Night in San Francisco (Sundays 7pm) | PROTO7YPE",
+  title: "Poker Tournament Night in San Francisco | PROTO7YPE",
   description:
-    "Join PROTO7YPE for Sunday poker tournaments in San Francisco at 7pm. Hosted tournament-style play (games of skill) with $40 tickets via Tito and a strict no-wagering policy (no rake, no buy-ins).",
+    "Join PROTO7YPE for Sunday poker tournaments in San Francisco. Hosted tournament-style play (games of skill) with a $40 ticket, smooth check-in, and a strict no-wagering policy.",
   keywords:
-    "poker tournament san francisco, sunday poker tournament, poker night sf, hosted poker tournament, private poker event, games of skill poker, no rake poker tournament, PROTO7YPE poker",
-  openGraph: {
-    title: "Poker Tournament Night in San Francisco | PROTO7YPE",
-    description:
-      "Sundays at 7pm • $40 tickets • Hosted tournament-style poker (games of skill) • San Francisco.",
-    url: "https://proto7ype.com/games",
-    siteName: "PROTO7YPE",
-    images: [
-      {
-        url: "/images/poker-tournament-hero.webp",
-        width: 1024,
-        height: 1024,
-        alt: "Neon poker tournament scene at PROTO7YPE in San Francisco",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Poker Tournament Night | PROTO7YPE",
-    description: "Sundays at 7pm • $40 tickets • San Francisco.",
-    images: ["/images/poker-tournament-hero.webp"],
-  },
+    "poker tournament san francisco, sunday poker tournament, poker night sf, hosted poker tournament, private poker event, games of skill poker, PROTO7YPE poker",
 };
 
 export default function GamesPage() {
@@ -40,7 +17,7 @@ export default function GamesPage() {
     "@type": "Event",
     name: "Poker Tournament Night at PROTO7YPE",
     description:
-      "Hosted tournament-style poker night (games of skill) in San Francisco. $40 tickets via Tito. Strict no-wagering policy: no cash wagering, no rake, no buy-ins.",
+      "Sunday poker tournaments in San Francisco. Hosted tournament-style play (games of skill) with a strict no-wagering policy.",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: {
@@ -53,7 +30,6 @@ export default function GamesPage() {
         addressCountry: "US",
       },
     },
-    image: ["https://proto7ype.com/images/poker-tournament-hero.webp"],
     organizer: {
       "@type": "Organization",
       name: "PROTO7YPE",
@@ -63,11 +39,11 @@ export default function GamesPage() {
       "@type": "Offer",
       price: "40",
       priceCurrency: "USD",
-      url: "https://proto7ype.com/games#checkout",
       availability: "https://schema.org/InStock",
+      url: "https://proto7ype.com/games",
+      category: "primary",
     },
-    // Recurring schedule (next occurrence unknown; Tito releases are source of truth)
-    startDate: "Sundays 19:00",
+    url: "https://proto7ype.com/games",
   };
 
   const jsonLdFaq = {
@@ -76,10 +52,10 @@ export default function GamesPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What’s your refund policy?",
+        name: "What's your refund policy?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Refunds are available up to 24 hours before the event start time. After that, tickets may be transferred to a future date at our discretion. If PROTO7YPE cancels an event, you’ll receive a full refund or transfer option.",
+          text: "Refunds are available up to 24 hours before the event start time. After that, tickets may be transferred to a future date at our discretion. If PROTO7YPE cancels an event, you'll receive a full refund or transfer option.",
         },
       },
       {
@@ -87,7 +63,7 @@ export default function GamesPage() {
         name: "How does check-in work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Check-in is handled via your Tito QR code at the door. You may be asked to show ID depending on the event.",
+          text: "Check-in is handled via your QR code at the door. You may be asked to show ID depending on the event.",
         },
       },
       {
@@ -95,7 +71,7 @@ export default function GamesPage() {
         name: "What should I bring?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Bring your QR ticket (on phone or printed) and a valid ID. Everything else is provided.",
+          text: "Bring your QR ticket (on phone or printed) and a valid ID. Everything else is provided for an enjoyable evening of games and community.",
         },
       },
       {
@@ -113,30 +89,14 @@ export default function GamesPage() {
     <div className="min-h-screen">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdEvent) }}
       />
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
       {/* Hero Section */}
       <section className="section relative overflow-hidden pt-32">
-        {/* Hero background image */}
-        <div className="absolute inset-0 -z-10 min-h-[520px]">
-          <Image
-            src="/images/poker-tournament-hero.webp"
-            alt="Neon poker tournament scene at PROTO7YPE in San Francisco"
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 1200px"
-          />
-          {/* readability overlays */}
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-        </div>
         <div className="section-wide max-w-5xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
@@ -145,6 +105,17 @@ export default function GamesPage() {
             <p className="text-xl lg:text-3xl text-zinc-300 mb-8 font-semibold">
               Sunday poker tournaments • Games of skill • San Francisco
             </p>
+
+            <div className="mx-auto mb-8 max-w-xl">
+              <Image
+                src="/images/PROTO7YPE-Poker-Sunday-Game-Night.webp"
+                alt="Poker tournament night at PROTO7YPE in San Francisco"
+                width={1024}
+                height={1024}
+                priority
+                className="h-auto w-full rounded-2xl border border-zinc-800 shadow-2xl"
+              />
+            </div>
             <p className="text-lg lg:text-xl text-zinc-400 mb-6 max-w-2xl mx-auto leading-relaxed">
               Join us every <span className="text-pink-400 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
             </p>
