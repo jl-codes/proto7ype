@@ -98,7 +98,7 @@ export default function GamesPage() {
       {/* Hero Section */}
       <section className="section relative overflow-hidden pt-32">
         {/* Ambient translucent artwork panel */}
-        <div className="absolute inset-x-0 top-32 pointer-events-none">
+        <div className="absolute inset-x-0 top-32 pointer-events-none z-0">
           <div className="mx-auto max-w-6xl px-6 md:px-12">
             <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-black/20 shadow-[0_0_80px_rgba(236,72,153,0.18)]">
               <Image
@@ -106,11 +106,11 @@ export default function GamesPage() {
                 alt="Neon poker tournament artwork"
                 fill
                 priority
-                className="object-cover object-center opacity-25 blur-[1px] saturate-125 contrast-110"
+                className="object-cover object-center opacity-35 blur-[0.5px] saturate-125 contrast-110"
               />
 
               {/* Darken for readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
 
               {/* Subtle neon glow */}
               <div className="absolute -inset-8 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.20),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.18),transparent_55%)]" />
@@ -118,8 +118,8 @@ export default function GamesPage() {
           </div>
         </div>
 
-        <div className="section-wide max-w-5xl">
-          <div className="text-center mb-12 relative">
+        <div className="section-wide max-w-5xl relative z-10">
+          <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
               <span className="gradient-text">Poker Tournament Night at PROTO7YPE</span>
             </h1>
@@ -143,7 +143,7 @@ export default function GamesPage() {
         </div>
 
         {/* Enhanced background animation with card suit motifs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: "1s"}}></div>
           <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: "2s"}}></div>
