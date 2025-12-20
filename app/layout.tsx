@@ -11,17 +11,24 @@ const audiowide = Audiowide({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://proto7ype.com"),
   title: "PROTO7YPE | Exclusive Immersive Penthouse Afters SF",
   description:
     "San Francisco's premier immersive nightlife venue. High-fidelity audio, XR visual environments, and curated industrial energy high above the city.",
   keywords:
     "sf penthouse party, luxury afters, private rave san francisco, goth techno, industrial bass, immersive nightlife, xr experience, vip venue",
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "PROTO7YPE | Exclusive Immersive Penthouse Afters",
     description:
       "Where the skyline meets the sound system. A visceral audio-visual experience high above San Francisco.",
-    url: "https://proto7ype.com",
+    url: "https://proto7ype.events",
     type: "website",
   },
 };
