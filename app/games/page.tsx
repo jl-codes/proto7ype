@@ -97,8 +97,29 @@ export default function GamesPage() {
       />
       {/* Hero Section */}
       <section className="section relative overflow-hidden pt-32">
+        {/* Ambient translucent artwork panel */}
+        <div className="absolute inset-x-0 top-32 pointer-events-none">
+          <div className="mx-auto max-w-6xl px-6 md:px-12">
+            <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-black/20 shadow-[0_0_80px_rgba(236,72,153,0.18)]">
+              <Image
+                src="/images/PROTO7YPE-Poker-Sunday-Game-Night.webp"
+                alt="Neon poker tournament artwork"
+                fill
+                priority
+                className="object-cover object-center opacity-25 blur-[1px] saturate-125 contrast-110"
+              />
+
+              {/* Darken for readability */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80" />
+
+              {/* Subtle neon glow */}
+              <div className="absolute -inset-8 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.20),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.18),transparent_55%)]" />
+            </div>
+          </div>
+        </div>
+
         <div className="section-wide max-w-5xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 relative">
             <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
               <span className="gradient-text">Poker Tournament Night at PROTO7YPE</span>
             </h1>
@@ -106,18 +127,6 @@ export default function GamesPage() {
               Sunday poker tournaments • Games of skill • San Francisco
             </p>
 
-            <div className="mx-auto mb-5 max-w-xl">
-              <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 shadow-2xl max-h-[260px] sm:max-h-[320px] lg:max-h-[380px]">
-                <Image
-                  src="/images/PROTO7YPE-Poker-Sunday-Game-Night.webp"
-                  alt="Poker tournament night at PROTO7YPE in San Francisco"
-                  width={1024}
-                  height={1024}
-                  priority
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-            </div>
             <p className="text-lg lg:text-xl text-zinc-400 mb-6 max-w-2xl mx-auto leading-relaxed">
               Join us every <span className="text-pink-400 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
             </p>
