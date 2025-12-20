@@ -3,9 +3,11 @@ import { gamesNightEvent } from "../../config/events";
 import TitoWidget from "../../components/TitoWidget";
 
 export const metadata = {
-  title: "Games Night at PROTO7YPE | Daily Membership",
-  description: "Daily Membership for PROTO7YPE Games Night - hosted games of skill, tournament formats, and community in San Francisco. No cash wagering.",
-  keywords: "games night san francisco, private club games, social gaming sf, tournament games, games of skill",
+  title: "Poker Tournament Night in San Francisco | PROTO7YPE",
+  description:
+    "Join PROTO7YPE for Sunday poker tournaments in San Francisco. Hosted tournament-style play (games of skill) with a $40 ticket, smooth check-in, and a strict no-wagering policy.",
+  keywords:
+    "poker tournament san francisco, sunday poker tournament, poker night sf, hosted poker tournament, private poker event, games of skill poker, PROTO7YPE poker",
 };
 
 export default function GamesPage() {
@@ -16,19 +18,22 @@ export default function GamesPage() {
         <div className="section-wide max-w-5xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
-              <span className="gradient-text">Games Night at PROTO7YPE</span>
+              <span className="gradient-text">Poker Tournament Night at PROTO7YPE</span>
             </h1>
             <p className="text-xl lg:text-3xl text-zinc-300 mb-8 font-semibold">
-              Daily Membership for access + hosted games of skill.
+              Sunday poker tournaments • Games of skill • San Francisco
             </p>
-            <p className="text-lg lg:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join us every <span className="text-pink-400 font-bold">Thursday at 7:00 PM</span> for an evening of strategy, community, and entertainment at PROTO7YPE&apos;s private social club.
+            <p className="text-lg lg:text-xl text-zinc-400 mb-6 max-w-2xl mx-auto leading-relaxed">
+              Join us every <span className="text-pink-400 font-bold">Sunday at 7:00 PM</span> for hosted tournament-style poker in a private, entertainment-focused setting.
+            </p>
+            <p className="text-base lg:text-lg text-zinc-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Tickets are <span className="text-pink-400 font-bold">$40</span> (pricing + availability managed in Tito).
             </p>
             <a 
               href="#checkout" 
               className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
             >
-              Get Daily Membership
+              Get Tickets ($40)
             </a>
           </div>
         </div>
@@ -91,7 +96,7 @@ export default function GamesPage() {
       {/* Checkout Section */}
       <section id="checkout" className="section scroll-mt-24">
         <div className="section-wide max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8 text-center gradient-text">Get Your Daily Membership</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center gradient-text">Get Tickets</h2>
           <div className="bg-zinc-900/30 border border-zinc-800 rounded-2xl p-6 mb-6">
             <div className="text-center mb-6">
               <div className="text-2xl font-bold text-white mb-2">{gamesNightEvent.date}</div>

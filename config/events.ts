@@ -46,9 +46,9 @@ export const currentEvent: EventMeta = {
 // Add new Thursday releases in Tito dashboard - they auto-appear on the /games page
 export const gamesNightEvent: EventMeta = {
   slug: "proto7ype-poker",
-  title: "Games Night at PROTO7YPE",
-  tagline: "Daily Membership for access + hosted games of skill.",
-  date: "Thursdays",
+  title: "Poker Tournament Night at PROTO7YPE",
+  tagline: "Hosted poker tournament night (games of skill) with a $40 ticket and smooth check-in.",
+  date: "Sundays",
   time: "7:00 PM",
   city: "San Francisco, CA",
   titoEventSlug:
