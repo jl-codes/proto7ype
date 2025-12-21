@@ -99,19 +99,30 @@ export default function GamesPage() {
       <section className="section relative overflow-hidden pt-32">
         <div className="section-wide max-w-5xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-7xl font-bold mb-6 strobe-text leading-tight">
+            <h1 className="text-4xl lg:text-7xl font-bold mb-5 strobe-text leading-tight">
               <span className="gradient-text">Poker Tournament Night at PROTO7YPE</span>
             </h1>
+
+            {/* Primary CTA near title (conversion-first) */}
+            <div className="mb-6">
+              <a
+                href="#checkout"
+                className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
+              >
+                Get Tickets ($40)
+              </a>
+            </div>
+
             <div
-              className="mx-auto mb-10 max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_0_80px_rgba(236,72,153,0.18)]"
+              className="mx-auto mb-6 max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_0_80px_rgba(236,72,153,0.18)]"
               style={{
                 backgroundImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.25), rgba(0,0,0,0.80)), url(/images/PROTO7YPE-Poker-Sunday-Game-Night.webp)",
+                  "linear-gradient(to bottom, rgba(0,0,0,0.68), rgba(0,0,0,0.28), rgba(0,0,0,0.82)), url(/images/PROTO7YPE-Poker-Sunday-Game-Night.webp)",
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "center 45%",
               }}
             >
-              <div className="relative px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 aspect-[16/7]">
+              <div className="relative max-h-[520px] sm:max-h-[440px] lg:max-h-[460px] px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 aspect-[4/5] sm:aspect-[16/9] lg:aspect-[16/7]">
                 {/* Neon glow */}
                 <div className="pointer-events-none absolute -inset-10 opacity-90 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.22),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.22),transparent_55%)]" />
 
@@ -128,15 +139,17 @@ export default function GamesPage() {
                     Tickets are <span className="text-pink-300 font-bold">$40</span>.
                   </p>
 
-                  <a
-                    href="#checkout"
-                    className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
-                  >
-                    Get Tickets ($40)
-                  </a>
+                  {/* CTA moved below image */}
                 </div>
               </div>
             </div>
+
+            <a
+              href="#checkout"
+              className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
+            >
+              Get Tickets ($40)
+            </a>
           </div>
         </div>
 
