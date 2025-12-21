@@ -292,37 +292,91 @@ button[class*="quantity"]:disabled:hover {
   display: none !important;
 }
 
-/* Mobile responsiveness */
+/* Mobile responsiveness (premium card layout) */
 @media (max-width: 768px) {
+  /* Outer wrapper */
   .tito-ticket-form,
   .tito-wrapper {
-    padding: 1rem !important;
+    padding: 0.5rem !important;
     margin: 0 !important;
   }
-  
-  .tito-ticket-type {
+
+  /* Card */
+  tito-widget .tito-ticket-type,
+  .tito-ticket-list .tito-ticket-type,
+  .tito-wrapper .tito-ticket-type,
+  .tito-release {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1rem !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0.85rem !important;
     padding: 1rem !important;
+    border-radius: 1rem !important;
+    background: rgba(24, 24, 27, 0.62) !important;
+    border: 1px solid rgba(244, 63, 94, 0.28) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
   }
-  
-  .tito-ticket-type-name {
-    font-size: 1rem !important;
+
+  /* Title */
+  .tito-ticket-type-name,
+  .tito-ticket-type .tito-ticket-name,
+  .tito-ticket-type h3 {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.08em !important;
+    min-width: 0 !important;
   }
-  
-  .tito-ticket-price-quantity {
+
+  /* Price + quantity row */
+  .tito-ticket-price-quantity,
+  .tito-ticket-type > div {
     width: 100% !important;
     justify-content: space-between !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
   }
-  
-  .tito-ticket-price {
-    font-size: 1.25rem !important;
+
+  .tito-ticket-price,
+  .tito-ticket-type .tito-ticket-price,
+  .tito-ticket-type .tito-ticket-price-quantity .tito-ticket-price {
+    font-size: 1.35rem !important;
   }
-  
+
+  /* Quantity controls: thumb-friendly */
+  .tito-release-quantity-button,
+  button[class*="quantity"],
+  .tito-ticket-type button {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 9999px !important;
+  }
+
+  .tito-ticket-quantity,
+  .tito-ticket-type input[type="number"],
+  .tito-ticket-type .tito-ticket-quantity input {
+    min-width: 84px !important;
+    max-width: 96px !important;
+    padding: 0.65rem 0.8rem !important;
+    font-size: 1.05rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  /* Primary checkout button: full width + more presence */
   .tito-btn,
-  .tito-submit-wrapper button {
+  .tito-submit-wrapper button,
+  .tito-submit {
     width: 100% !important;
-    padding: 1rem !important;
+    padding: 1.1rem 1.25rem !important;
+    font-size: 1.05rem !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Reduce accidental sideways scroll */
+  .tito-wrapper,
+  .tito-ticket-form,
+  .tito-ticket-list {
+    overflow-x: hidden !important;
   }
 }

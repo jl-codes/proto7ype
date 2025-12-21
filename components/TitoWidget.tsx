@@ -10,10 +10,18 @@ export default function TitoWidget({ eventSlug }: TitoWidgetProps) {
   const [isLoading, setIsLoading] = useState(true);
   const widgetRef = useRef<HTMLDivElement>(null);
 
-  // Function to apply horizontal layout styles
+  // Function to apply horizontal layout styles (desktop only)
   const applyHorizontalLayout = () => {
+    // Let CSS control mobile layout entirely
+    if (
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || window.matchMedia?.("(max-width: 768px)").matches)
+    ) {
+      return;
+    }
+
     if (!widgetRef.current) {
-      console.log('❌ No widget ref');
+      console.log("❌ No widget ref");
       return;
     }
 
