@@ -104,14 +104,14 @@ export default function GamesPage() {
             </h1>
 
             {/* Primary CTA near title (conversion-first) */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <a
                 href="#checkout"
                 className="button-primary inline-block text-base lg:text-lg px-10 py-4 shadow-2xl hover:shadow-pink-500/50"
               >
                 Get Tickets ($40)
               </a>
-            </div>
+            </div> */}
 
             <div
               className="mx-auto mb-6 max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_0_80px_rgba(236,72,153,0.18)]"
