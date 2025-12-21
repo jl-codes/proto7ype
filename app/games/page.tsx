@@ -111,12 +111,12 @@ export default function GamesPage() {
                 backgroundPosition: "center",
               }}
             >
-              <div className="relative px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+              <div className="relative px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 aspect-[16/7]">
                 {/* Neon glow */}
                 <div className="pointer-events-none absolute -inset-10 opacity-90 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.22),transparent_55%),radial-gradient(circle_at_70%_40%,rgba(236,72,153,0.22),transparent_55%)]" />
 
-                {/* Glass card content */}
-                <div className="relative mx-auto max-w-3xl rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md p-6 sm:p-8">
+                {/* Content overlay (fills the image area) */}
+                <div className="relative mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-2">
                   <p className="text-xl lg:text-3xl text-zinc-200 mb-6 font-semibold">
                     Sunday poker tournaments • Games of skill • San Francisco
                   </p>
