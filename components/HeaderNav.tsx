@@ -13,6 +13,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/games", label: "Games" },
   { href: "/tickets", label: "Tickets", variant: "cta" },
+  { href: "/vibe-xr-101", label: "Vibe XR 101" },
 ];
 
 function isActivePath(pathname: string, href: string) {

@@ -64,3 +64,27 @@ export const gamesNightEvent: EventMeta = {
     "Optional VIP seating and guest passes (if available)"
   ],
 };
+
+// Vibe XR 101 Workshop Series
+// Event URL: https://ti.to/proto7ype/vibe-xr-101
+export const vibeXR101Event: EventMeta = {
+  slug: "vibe-xr-101",
+  title: "Vibe XR 101",
+  tagline: "AI-Native Game, XR, and Worldbuilding with Cline, Unreal, Blender, ThreeJS, and Open 3D Models",
+  date: "10-Class Series",
+  time: "Various Times",
+  city: "San Francisco, CA",
+  titoEventSlug:
+    process.env.NEXT_PUBLIC_TITO_EVENT_SLUG_VIBE_XR ||
+    "proto7ype/vibe-xr-101",
+  heroImage: "/images/Vibe-XR-101.png",
+  galleryImages: [],
+  musicGenres: [], // Not applicable
+  features: [
+    "10-class build-first course series",
+    "AI-native creative pipelines with Cline as your copilot",
+    "Hands-on with Unreal Engine 5, Blender, ThreeJS, and more",
+    "Choose your track: Game Dev, WebXR, or 3D Printing",
+    "Build portfolio-worthy projects with AI assistance"
+  ],
+};
