@@ -31,9 +31,9 @@ export default function LearnPage() {
     organizer: {
       "@type": "Organization",
       name: "PROTO7YPE / Frontier Makerspace",
-      url: "https://proto7ype.com",
+      url: "https://proto7ype.events",
     },
-    url: "https://proto7ype.com/learn",
+    url: "https://proto7ype.events/learn",
   };
 
   return (
@@ -497,10 +497,10 @@ export default function LearnPage() {
               We&apos;re here to help. Reach out with any questions about Vibe XR 101, the course structure, or registration.
             </p>
             <a 
-              href="mailto:hello@proto7ype.com" 
+              href="mailto:hello@proto7ype.events"
               className="text-pink-400 hover:text-pink-300 font-semibold text-lg transition-colors"
             >
-              hello@proto7ype.com
+              hello@proto7ype.events
             </a>
             <div className="mt-6 pt-6 border-t border-zinc-800">
               <p className="text-zinc-400 text-sm mb-2">

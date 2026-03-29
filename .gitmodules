@@ -1,0 +1,3 @@
+[submodule "public/arcade"]
+	path = public/arcade
+	url = https://github.com/Frontier-Makerspace/proto7ype-arcade.git
