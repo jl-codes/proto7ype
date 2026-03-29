@@ -77,7 +77,6 @@ proto7ype-events/
 │  └─ globals.css         # Dark rave aesthetic
 ├─ components/
 │  ├─ HeroSection.tsx     # Landing hero with pure energy
-│  ├─ PromoGallery.tsx    # Photo grid for past events
 │  └─ TitoWidget.tsx      # Ticketing integration
 ├─ config/
 │  └─ events.ts           # Event metadata system
