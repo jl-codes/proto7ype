@@ -106,7 +106,7 @@ export default function PromoGallery() {
               This is a night built around movement, rhythm, and respect for the room and the people in it.
             </p>
             <a 
-              href="/tickets" 
+              href="/request-arcade" 
               className="button-primary inline-block"
             >
               Secure Your Spot

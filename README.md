@@ -97,7 +97,7 @@ proto7ype-events/
 
 1. **User Experience**: 
    - Browse event on landing page
-   - Click "Get Your Tickets Now" → /tickets
+   - Click "Get Your Tickets Now" → /request-arcade
    - Select ticket tier → Tito checkout
    - Complete payment via Stripe
 
