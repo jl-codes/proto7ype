@@ -12,8 +12,8 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/games", label: "Games" },
-  { href: "/tickets", label: "Tickets", variant: "cta" },
-  { href: "/vibe-xr-101", label: "Vibe XR 101" },
+  { href: "/learn", label: "Learn" },
+  { href: "/request-arcade", label: "Request an Arcade", variant: "cta" },
 ];
 
 function isActivePath(pathname: string, href: string) {
@@ -41,7 +41,7 @@ export function HeaderNav() {
               }
               aria-current={active ? "page" : undefined}
             >
-              <span className="skew-x-[12deg] inline-block">Tickets</span>
+              <span className="skew-x-[12deg] inline-block">{item.label}</span>
             </Link>
           );
         }
