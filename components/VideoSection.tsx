@@ -2,6 +2,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 export default function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,25 +20,31 @@ export default function VideoSection() {
       <div className="section-wide">
         <div className="text-center mb-8">
           <h2 className="text-4xl lg:text-6xl font-bold mb-4 strobe-text">
-            <span className="gradient-text">UNDERGROUND EXPERIENCES</span>
+            <span className="gradient-text">WHAT WE BUILD</span>
           </h2>
           <p className="text-xl text-zinc-300 max-w-3xl mx-auto font-light">
-            PROTO7YPE is a high-energy, immersive venue in San Francisco featuring XR visual environments, late-night afters, and hosted Games Night events.
+            PROTO7YPE is an open-source arcade game studio — original titles,
+            community mods, and a free engine built for makers who ship.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/tickets" className="button-primary inline-block text-base px-10 py-4">
-              Afters Shows
-            </a>
-            <a href="/games" className="button-primary inline-block text-base px-10 py-4">
-              Games Night
+            <Link href="/games" className="button-primary inline-block text-base px-10 py-4">
+              Browse Games
+            </Link>
+            <a
+              href="https://github.com/jl-codes/proto7ype"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary inline-block text-base px-10 py-4"
+            >
+              View Source
             </a>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
           {/* Video Container */}
-          <div className="relative aspect-[9/16] lg:aspect-video rounded-2xl overflow-hidden border-2 border-orange-500/50 rave-glow bg-zinc-900 mx-auto max-w-lg lg:max-w-none group">
+          <div className="relative aspect-[9/16] lg:aspect-video rounded-2xl overflow-hidden border-2 border-pink-500/50 rave-glow bg-zinc-900 mx-auto max-w-lg lg:max-w-none group">
             <video
               ref={videoRef}
               src="/images/promo-video.mp4"
@@ -54,7 +61,7 @@ export default function VideoSection() {
             {/* Mute/Unmute Control */}
             <button
               onClick={toggleMute}
-              className="absolute bottom-6 right-6 bg-black/60 hover:bg-orange-500 text-white p-3 rounded-full hover:scale-110 transition-all duration-300 border border-white/20 backdrop-blur-sm z-20 group-hover:opacity-100 opacity-0 lg:opacity-100"
+              className="absolute bottom-6 right-6 bg-black/60 hover:bg-pink-500 text-white p-3 rounded-full hover:scale-110 transition-all duration-300 border border-white/20 backdrop-blur-sm z-20 group-hover:opacity-100 opacity-0 lg:opacity-100"
               aria-label={isMuted ? "Unmute video" : "Mute video"}
             >
               {isMuted ? (
@@ -68,41 +75,41 @@ export default function VideoSection() {
               )}
             </button>
 
-            {/* "Live" Indicator */}
-            <div className="absolute top-6 left-6 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-orange-500/30">
-              <div className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></div>
-              <span className="text-white text-xs font-bold tracking-widest uppercase">Live Footage</span>
+            {/* Gameplay Indicator */}
+            <div className="absolute top-6 left-6 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-pink-500/30">
+              <div className="w-2.5 h-2.5 bg-pink-500 rounded-full animate-pulse"></div>
+              <span className="text-white text-xs font-bold tracking-widest uppercase">Gameplay Footage</span>
             </div>
           </div>
 
-            {/* Video description with attitude */}
+            {/* Studio pillars */}
           <div className="mt-12 text-center">
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">🌀</div>
-                <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  XR Visual Worlds
+              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-pink-500/30 transition-colors">
+                <div className="text-3xl mb-3">🕹️</div>
+                <h4 className="text-pink-400 font-bold mb-3 uppercase tracking-wider">
+                  Arcade Originals
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  Projection mapping + reactive environments that turn the room into a living system.
+                  Hand-crafted titles across rhythm, horror, racing, and puzzle — designed for cabinets and screens alike.
                 </p>
               </div>
-              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">🔊</div>
-                <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  Afters Shows
+              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-pink-500/30 transition-colors">
+                <div className="text-3xl mb-3">⚙️</div>
+                <h4 className="text-pink-400 font-bold mb-3 uppercase tracking-wider">
+                  Open-Source Engine
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  Late-night sets, high-fidelity sound, and a respect-first room built for serious energy.
+                  Every system ships with source. Fork the repo, read the code, and build your own levels from day one.
                 </p>
               </div>
-              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-orange-500/30 transition-colors">
-                <div className="text-3xl mb-3">♠️</div>
-                <h4 className="text-orange-400 font-bold mb-3 uppercase tracking-wider">
-                  Games Night
+              <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 rave-glow hover:border-pink-500/30 transition-colors">
+                <div className="text-3xl mb-3">🛠️</div>
+                <h4 className="text-pink-400 font-bold mb-3 uppercase tracking-wider">
+                  Community Mods
                 </h4>
                 <p className="text-zinc-300 text-sm">
-                  Hosted tables and tournament-style formats as part of private social club access.
+                  Player-made maps, skins, and mechanics merged upstream — the community shapes every release.
                 </p>
               </div>
             </div>
@@ -110,21 +117,21 @@ export default function VideoSection() {
 
           {/* Call to action */}
           <div className="text-center mt-12">
-            <div className="bg-zinc-900/30 border border-orange-500/30 rounded-2xl p-8 rave-glow">
-              <h3 className="text-3xl font-bold mb-4 gradient-text">Choose your experience</h3>
+            <div className="bg-zinc-900/30 border border-pink-500/30 rounded-2xl p-8 rave-glow">
+              <h3 className="text-3xl font-bold mb-4 gradient-text">Start playing — or start building</h3>
               <p className="text-zinc-200 mb-8 text-lg">
-                Explore upcoming afters shows, or grab a Daily Membership for Games Night.
+                Jump into our latest arcade titles, or clone the repo and ship your own.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="/tickets" className="button-primary inline-block text-lg px-10 py-4">
-                  Afters Shows
-                </a>
-                <a href="/games" className="button-primary inline-block text-lg px-10 py-4">
-                  Games Night
-                </a>
+                <Link href="/games" className="button-primary inline-block text-lg px-10 py-4">
+                  Play Games
+                </Link>
+                <Link href="/request-arcade" className="button-primary inline-block text-lg px-10 py-4">
+                  Request an Arcade
+                </Link>
               </div>
               <p className="text-xs text-zinc-500 mt-6 max-w-2xl mx-auto">
-                PROTO7YPE is based in San Francisco. Event details and venue address are shared after purchase.
+                All PROTO7YPE games are free and open-source. Contributions welcome on GitHub.
               </p>
             </div>
           </div>
@@ -133,9 +140,9 @@ export default function VideoSection() {
 
       {/* Intense background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-3/4 left-3/4 w-48 h-48 bg-orange-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-3/4 left-3/4 w-48 h-48 bg-pink-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
     </section>
   );
