@@ -1,6 +1,7 @@
 // components/HeroSection.tsx
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -22,13 +23,16 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-4xl">
         {/* Logo with subtle glow */}
         <div className="mb-8 flex justify-center">
-          <img
+          <Image
             src="/images/proto7ype-logo.png"
             alt="PROTO7YPE Logo"
+            width={250}
+            height={250}
             className="w-[150px] lg:w-[250px] h-auto"
             style={{
               filter: 'drop-shadow(0 0 20px rgba(236, 72, 153, 0.4)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.2))',
             }}
+            priority
           />
         </div>
         

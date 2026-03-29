@@ -79,7 +79,7 @@ export default function RootLayout({
               </div>
               <div className="flex flex-col items-center md:items-end gap-2 text-center md:text-right">
                 <a
-                  href="https://github.com/Frontier-Makerspace/proto7ype-arcade"
+                  href="https://github.com/jl-codes/proto7ype"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-semibold transition-colors"
