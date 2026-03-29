@@ -11,11 +11,11 @@ const audiowide = Audiowide({
 });
 
 export const metadata: Metadata = {
-  title: "PROTO7YPE | Exclusive Immersive Penthouse Afters SF",
+  title: "PROTO7YPE | Indie Game Studio & Arcade Collective",
   description:
-    "San Francisco's premier immersive nightlife venue. High-fidelity audio, XR visual environments, and curated industrial energy high above the city.",
+    "Proto7ype is an indie game studio and arcade collective building open-source games, XR experiences, and interactive installations at the intersection of hardware and play.",
   keywords:
-    "sf penthouse party, luxury afters, private rave san francisco, goth techno, industrial bass, immersive nightlife, xr experience, vip venue",
+    "indie game studio, open source games, arcade collective, xr games, interactive installations, hackerspace arcade, retro gaming, game development, proto7ype, frontier makerspace",
   icons: {
     icon: [
       { url: "/icon.png", sizes: "32x32", type: "image/png" },
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "PROTO7YPE | Exclusive Immersive Penthouse Afters",
+    title: "PROTO7YPE | Indie Game Studio & Arcade Collective",
     description:
-      "Where the skyline meets the sound system. A visceral audio-visual experience high above San Francisco.",
+      "Open-source games, XR experiences, and interactive installations. Built at the intersection of hardware and play.",
     url: "https://proto7ype.events",
     type: "website",
   },
@@ -77,9 +77,16 @@ export default function RootLayout({
                 <span className="hidden md:block text-zinc-700">·</span>
                 <span>San Francisco</span>
               </div>
-              <div className="text-center md:text-right">
-                <div className="mb-1">Location revealed after ticket purchase</div>
-                <div className="text-zinc-600">Where sound, hardware, and energy get prototyped in real time</div>
+              <div className="flex flex-col items-center md:items-end gap-2 text-center md:text-right">
+                <a
+                  href="https://github.com/Frontier-Makerspace/proto7ype-arcade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-semibold transition-colors"
+                >
+                  ⭐ Star on GitHub
+                </a>
+                <div className="text-zinc-600">Open source — built by players, for players</div>
               </div>
             </div>
           </footer>
