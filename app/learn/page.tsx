@@ -1,17 +1,15 @@
-// app/vibe-xr-101/page.tsx
+// app/learn/page.tsx
 import Image from "next/image";
-import { vibeXR101Event } from "../../config/events";
-import TitoWidget from "../../components/TitoWidget";
 
 export const metadata = {
-  title: "Vibe XR 101 - AI-Native Game & XR Development Course | PROTO7YPE",
+  title: "Learn - AI-Native Game & XR Development Course | PROTO7YPE",
   description:
     "10-class build-first course series on AI-native creative pipelines. Learn Unreal Engine 5, Blender, ThreeJS, and more with Cline as your copilot. Workshops in San Francisco.",
   keywords:
     "vibe xr 101, ai game development, unreal engine 5 course, blender course, threejs course, webxr, 3d printing, cline ai, ai-native development, san francisco workshops, proto7ype",
 };
 
-export default function VibeXR101Page() {
+export default function LearnPage() {
   const jsonLdEvent = {
     "@context": "https://schema.org",
     "@type": "EducationEvent",
@@ -35,7 +33,7 @@ export default function VibeXR101Page() {
       name: "PROTO7YPE / Frontier Makerspace",
       url: "https://proto7ype.com",
     },
-    url: "https://proto7ype.com/vibe-xr-101",
+    url: "https://proto7ype.com/learn",
   };
 
   return (
@@ -59,7 +57,7 @@ export default function VibeXR101Page() {
             {/* Hero Image */}
             <div className="mx-auto mb-8 max-w-2xl overflow-hidden rounded-3xl border-2 border-pink-500/30 shadow-[0_0_80px_rgba(236,72,153,0.25)]">
               <Image
-                src={vibeXR101Event.heroImage}
+                src="/images/Vibe-XR-101.png"
                 alt="Vibe XR 101 Workshop Series"
                 width={800}
                 height={800}
@@ -443,19 +441,13 @@ export default function VibeXR101Page() {
               instructor guidance, and access to PROTO7YPE during the event.
             </p>
             <p className="text-zinc-400 text-sm">
-              Dates, times, and pricing are displayed in the ticket selector below.
+              Dates, times, and pricing will be announced soon. Check back for updates.
             </p>
           </div>
 
-          <TitoWidget eventSlug={vibeXR101Event.titoEventSlug} />
-
-          {/* Payment info */}
           <div className="text-center text-sm text-zinc-500 mt-6 max-w-2xl mx-auto">
-            <p className="mb-2">
-              Payments are processed securely via <strong>Stripe</strong> through our ticketing partner, <strong>Tito</strong>.
-            </p>
             <p>
-              You&apos;ll receive a QR-coded ticket and venue details in your confirmation email.
+              You&apos;ll receive venue details in your confirmation email.
             </p>
           </div>
         </div>
