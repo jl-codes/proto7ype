@@ -1,51 +1,64 @@
 // app/page.tsx
+import Link from "next/link";
 import HeroSection from "../components/HeroSection";
 import VideoSection from "../components/VideoSection";
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero section with that sick neon space photo */}
+      {/* Hero section — logo, tagline, genre chips */}
       <HeroSection />
 
-      {/* Instagram video as the centerpiece - "You good bro?" energy */}
+      {/* Gameplay footage & studio pillars */}
       <VideoSection />
 
-      {/* Simple final CTA */}
+      {/* Bottom CTA — get involved */}
       <section className="section bg-zinc-900/20 border-t border-zinc-800">
         <div className="section-wide text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 strobe-text">
-              <span className="gradient-text">A GLITCH IN THE SIMULATION</span>
+              <span className="gradient-text">JOIN THE ARCADE</span>
             </h2>
             <p className="text-xl text-zinc-300 mb-10 leading-relaxed font-light">
-              This isn&apos;t a tech demo. It&apos;s an audiovisual override. <br/>
-              State-of-the-art XR projection mapping. Reactive visual environments. High-fidelity industrial sound. <br/>
-              <span className="text-orange-400 font-medium block mt-4">We are redefining the San Francisco underground.</span>
+              Play our latest titles, request a custom arcade cabinet for your
+              space, or learn how to build your own games with the PROTO7YPE
+              open-source engine.
             </p>
-            
+
             <div className="space-y-8">
-              <a href="/tickets" className="button-primary inline-block text-lg px-12 py-5 font-bold tracking-widest hover:scale-105 transition-transform duration-200">
-                GET ON THE LIST
-              </a>
-              
-              <div className="flex flex-col md:flex-row justify-center gap-8 mt-12 text-sm text-zinc-400">
-               <div className="flex items-center gap-3 justify-center">
-                  <span className="text-orange-500 text-xl">⚠️</span>
-                  <span>RESPECT THE SPACE</span>
-               </div>
-               <div className="flex items-center gap-3 justify-center">
-                  <span className="text-orange-500 text-xl">📍</span>
-                  <span>SECRET DOWNTOWN LOCATION</span>
-               </div>
-               <div className="flex items-center gap-3 justify-center">
-                  <span className="text-orange-500 text-xl">🚫</span>
-                  <span> STRICT NO PHOTOS POLICY</span>
-               </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <Link
+                  href="/games"
+                  className="button-primary inline-block text-lg px-12 py-5 font-bold tracking-widest hover:scale-105 transition-transform duration-200"
+                >
+                  PLAY GAMES
+                </Link>
+                <Link
+                  href="/request-arcade"
+                  className="button-primary inline-block text-lg px-12 py-5 font-bold tracking-widest hover:scale-105 transition-transform duration-200"
+                >
+                  REQUEST AN ARCADE
+                </Link>
+                <Link
+                  href="/learn"
+                  className="button-primary inline-block text-lg px-12 py-5 font-bold tracking-widest hover:scale-105 transition-transform duration-200"
+                >
+                  LEARN
+                </Link>
               </div>
 
-              <p className="text-xs text-zinc-600 uppercase tracking-widest max-w-lg mx-auto mt-8 opacity-60">
-                21+ • ID REQUIRED • GOOD VIBES MANDATORY
+              <p className="text-xs text-zinc-500 mt-6 max-w-2xl mx-auto">
+                All PROTO7YPE games are free and open-source.
+                Contributions welcome on{" "}
+                <a
+                  href="https://github.com/jl-codes/proto7ype"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 transition-colors"
+                >
+                  GitHub
+                </a>
+                .
               </p>
             </div>
           </div>
