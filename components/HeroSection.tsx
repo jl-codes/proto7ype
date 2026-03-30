@@ -20,15 +20,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-32 sm:pt-36 md:pt-40">
         {/* Logo with subtle glow */}
-        <div className="mb-8 flex justify-center">
+        <div className="mb-6 flex justify-center">
           <Image
             src="/images/proto7ype-logo.png"
             alt="PROTO7YPE Logo"
-            width={250}
-            height={250}
-            className="w-[150px] lg:w-[250px] h-auto"
+            width={200}
+            height={200}
+            className="w-[100px] sm:w-[120px] lg:w-[180px] h-auto"
             style={{
               filter: 'drop-shadow(0 0 20px rgba(236, 72, 153, 0.4)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.2))',
             }}
@@ -37,21 +37,21 @@ export default function HeroSection() {
         </div>
         
         {/* Main title with extreme glitch effect */}
-        <h1 className="text-7xl lg:text-[12rem] font-black mb-8 tracking-tighter">
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black mb-6 tracking-tight">
           <span className="text-white glitch-text" data-text="PROTO7YPE">PROTO7YPE</span>
         </h1>
         
         {/* Tagline */}
-        <p className="text-2xl lg:text-3xl text-zinc-200 mb-12 font-light tracking-wide">
+        <p className="text-xl lg:text-2xl text-zinc-200 mb-8 font-light tracking-wide">
           OPEN-SOURCE <span className="text-pink-500 font-bold">ARCADE GAME STUDIO</span>
         </p>
 
         {/* Game genres */}
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 sm:gap-x-12 sm:gap-y-8 lg:gap-x-16 mb-16">
+        <div className="flex justify-center gap-1 sm:gap-1.5 md:gap-2 mb-10 overflow-x-auto px-2">
           {["ARCADE", "RHYTHM", "HORROR", "RACING", "CO-OP", "PUZZLE"].map((genre) => (
             <span
               key={genre}
-              className="inline-block min-w-[9rem] px-5 py-3 sm:px-8 sm:py-4 lg:px-10 bg-black/40 border-2 border-pink-500/30 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
+              className="shrink-0 px-3 py-2 sm:px-5 sm:py-3 md:px-7 md:py-3 bg-black/40 border border-pink-500/30 sm:border-2 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-[0.6rem] sm:text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
             >
               <span className="inline-block transform skew-x-[5deg]">{genre}</span>
             </span>
@@ -60,13 +60,12 @@ export default function HeroSection() {
 
         {/* Open-source community statement */}
         <div className="mb-16 max-w-2xl mx-auto">
-          <p className="text-zinc-300 text-lg lg:text-xl leading-loose font-light">
-            Building games in the open — from cabinet to code. <br/>
-            Indie arcade experiences crafted by a community of players and makers. <br/>
-            <span className="text-pink-500/80 text-xs uppercase tracking-widest mt-6 block border-t border-white/10 pt-6 w-fit mx-auto px-8">
-              Fork it. Mod it. Play it. Ship it.
-            </span>
+          <p className="text-zinc-300 text-lg lg:text-xl leading-relaxed font-light">
+            Open-source arcade games — from cabinet to code.
           </p>
+          <span className="text-pink-500/80 text-xs uppercase tracking-widest mt-6 block border-t border-white/10 pt-6 w-fit mx-auto px-8">
+            Fork it. Mod it. Play it. Ship it.
+          </span>
         </div>
 
         {/* Main CTAs */}
