@@ -226,7 +226,7 @@ export default function GamesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section relative overflow-hidden pt-40 pb-8">
+      <section className="section relative overflow-hidden pb-8" style={{ paddingTop: '10rem' }}>
         <div className="section-wide max-w-5xl text-center">
           <h1 className="text-4xl lg:text-7xl font-bold mb-5 strobe-text leading-tight">
             <span className="gradient-text">The Arcade</span>
