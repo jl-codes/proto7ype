@@ -44,7 +44,7 @@ export default function LearnPage() {
       />
 
       {/* Hero Section */}
-      <section className="section relative overflow-hidden pt-32">
+      <section className="section relative overflow-hidden pt-40">
         <div className="section-wide max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-7xl font-bold mb-5 strobe-text leading-tight">

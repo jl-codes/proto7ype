@@ -68,11 +68,11 @@ export default function VideoSection() {
         {/* Gradient edges for blending */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
 
-        {/* Gameplay Footage indicator */}
+        {/* Launch Party Footage indicator */}
         <div className="absolute top-6 left-6 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-pink-500/30 z-20">
           <div className="w-2.5 h-2.5 bg-pink-500 rounded-full animate-pulse" />
           <span className="text-white text-xs font-bold tracking-widest uppercase">
-            Gameplay Footage
+            Launch Party Footage
           </span>
         </div>
 

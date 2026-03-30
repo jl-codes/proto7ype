@@ -9,7 +9,7 @@ export default function HomePage() {
       {/* Hero section — logo, tagline, genre chips */}
       <HeroSection />
 
-      {/* Gameplay footage & studio pillars */}
+      {/* Launch Party footage & studio pillars */}
       <VideoSection />
 
       {/* Bottom CTA — get involved */}
