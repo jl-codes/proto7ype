@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl pt-32 sm:pt-36 md:pt-40">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl pt-24 sm:pt-32 md:pt-36">
         {/* Logo with subtle glow */}
         <div className="mb-6 flex justify-center">
           <Image
@@ -42,16 +42,16 @@ export default function HeroSection() {
         </h1>
         
         {/* Tagline */}
-        <p className="text-xl lg:text-2xl text-zinc-200 mb-8 font-light tracking-wide">
+        <p className="text-base sm:text-lg lg:text-2xl text-zinc-200 mb-6 sm:mb-8 font-light tracking-wide">
           OPEN-SOURCE <span className="text-pink-500 font-bold">ARCADE GAME STUDIO</span>
         </p>
 
         {/* Game genres */}
-        <div className="flex justify-center gap-1 sm:gap-1.5 md:gap-2 mb-10 overflow-x-auto px-2">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10 px-2">
           {["ARCADE", "RHYTHM", "HORROR", "RACING", "CO-OP", "PUZZLE"].map((genre) => (
             <span
               key={genre}
-              className="shrink-0 px-3 py-2 sm:px-5 sm:py-3 md:px-7 md:py-3 bg-black/40 border border-pink-500/30 sm:border-2 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-[0.6rem] sm:text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
+              className="px-2.5 py-1.5 sm:px-4 sm:py-2.5 md:px-6 md:py-3 bg-black/40 border border-pink-500/30 sm:border-2 backdrop-blur-sm transform skew-x-[-5deg] text-pink-400 font-bold text-[0.55rem] sm:text-[0.65rem] md:text-xs tracking-wider hover:bg-pink-500/10 hover:border-pink-500/50 transition-all cursor-default"
             >
               <span className="inline-block transform skew-x-[5deg]">{genre}</span>
             </span>
@@ -59,8 +59,8 @@ export default function HeroSection() {
         </div>
 
         {/* Open-source community statement */}
-        <div className="mb-16 max-w-2xl mx-auto">
-          <p className="text-zinc-300 text-lg lg:text-xl leading-relaxed font-light">
+        <div className="mb-10 sm:mb-16 max-w-2xl mx-auto">
+          <p className="text-zinc-300 text-sm sm:text-base lg:text-xl leading-relaxed font-light">
             Open-source arcade games — from cabinet to code.
           </p>
           <span className="text-pink-500/80 text-xs uppercase tracking-widest mt-6 block border-t border-white/10 pt-6 w-fit mx-auto px-8">
@@ -69,17 +69,17 @@ export default function HeroSection() {
         </div>
 
         {/* Main CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
           <Link
             href="/games"
-            className="button-primary inline-block text-xl px-12 py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200"
+            className="button-primary inline-block text-sm sm:text-base lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200 w-full sm:w-auto text-center"
           >
             PLAY GAMES
           </Link>
 
           <Link
             href="/request-arcade"
-            className="button-primary inline-block text-xl px-12 py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200"
+            className="button-primary inline-block text-sm sm:text-base lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 font-black tracking-widest hover:scale-105 transition-transform duration-200 w-full sm:w-auto text-center"
           >
             REQUEST AN ARCADE
           </Link>

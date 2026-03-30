@@ -13,8 +13,11 @@ body {
   background: #050509;
   color: #f9fafb;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
   letter-spacing: 0.02em;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Enhanced letter spacing for headers */
