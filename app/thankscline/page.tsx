@@ -6,6 +6,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default function ClineRunnerPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,19 @@ export default function ClineRunnerPage() {
     renderer.domElement.style.inset = "0";
     renderer.domElement.style.zIndex = "1";
     containerRef.current.appendChild(renderer.domElement);
+
+    // ── OrbitControls — drag to rotate, auto-rotates when idle ───
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 1.2, 0);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1.8;
+    controls.minDistance = 4;
+    controls.maxDistance = 25;
+    controls.maxPolarAngle = Math.PI * 0.85; // prevent going underground
+    controls.minPolarAngle = 0.2; // prevent going directly overhead
+    controls.enablePan = false; // keep focus on the character
 
     // ── Post-processing bloom (the #1 cheap trick) ───────────────
     const composer = new EffectComposer(renderer);
@@ -477,14 +491,8 @@ export default function ClineRunnerPage() {
       spotlight2.position.z = 2 + Math.cos(elapsed * 0.3) * 2;
       spotlight2.intensity = 1.5 + beat * 2;
 
-      // Continuous 360° orbit around character (~25 seconds per rotation)
-      const orbitSpeed = 0.25; // radians per second
-      const camAngle = elapsed * orbitSpeed;
-      const orbitRadius = 8;
-      camera.position.x = Math.sin(camAngle) * orbitRadius;
-      camera.position.z = Math.cos(camAngle) * orbitRadius;
-      camera.position.y = 2.2 + Math.sin(elapsed * 0.2) * 0.3;
-      camera.lookAt(0, 1.2, 0);
+      // Update OrbitControls (handles auto-rotate + user drag)
+      controls.update();
 
       // Particles
       const posArr = particleGeometry.attributes.position.array as Float32Array;
@@ -542,6 +550,7 @@ export default function ClineRunnerPage() {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
+      controls.dispose();
       composer.dispose();
       renderer.dispose();
       groundGeometry.dispose();
