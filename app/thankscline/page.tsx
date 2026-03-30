@@ -440,8 +440,42 @@ export default function ClineRunnerPage() {
     greenFlash.position.set(-5, 6, -3);
     scene.add(greenFlash);
 
-    // ── Load character — ONLY first animation at 0.8x speed ─────
+    // ── Tap-to-beat tempo detection ──────────────────────────────
+    const tapTimes: number[] = [];
+    let tapBPM = 120; // default BPM
+    let lastTapTime = 0;
+    let targetTimeScale = 0.8;
+    let currentTimeScale = 0.8;
+
+    const handleTap = () => {
+      const now = performance.now();
+      tapTimes.push(now);
+      lastTapTime = now;
+
+      // Keep last 8 taps
+      if (tapTimes.length > 8) tapTimes.shift();
+
+      // Calculate BPM from intervals
+      if (tapTimes.length >= 2) {
+        let totalInterval = 0;
+        for (let i = 1; i < tapTimes.length; i++) {
+          totalInterval += tapTimes[i] - tapTimes[i - 1];
+        }
+        const avgInterval = totalInterval / (tapTimes.length - 1);
+        tapBPM = Math.min(200, Math.max(60, 60000 / avgInterval));
+        // Map BPM 60-200 to timeScale 0.4-2.0
+        targetTimeScale = 0.4 + ((tapBPM - 60) / 140) * 1.6;
+      }
+    };
+
+    // Listen for clicks and taps
+    const onPointerDown = () => handleTap();
+    renderer.domElement.addEventListener("pointerdown", onPointerDown);
+
+    // ── Load character — cycle through all animations ────────────
     let mixer: THREE.AnimationMixer | null = null;
+    const allActions: THREE.AnimationAction[] = [];
+    let currentActionIndex = 0;
     const loader = new GLTFLoader();
 
     loader.load(
@@ -464,10 +498,8 @@ export default function ClineRunnerPage() {
             const isEye = name.includes("eye") || name.includes("pupil") || name.includes("iris");
 
             if (isEye) {
-              // Solid black eyes
               mesh.material = new THREE.MeshBasicMaterial({ color: 0x000000 });
             } else {
-              // Softly glowing white body
               mesh.material = new THREE.MeshStandardMaterial({
                 color: 0xe8e8f0,
                 emissive: 0xccccdd,
@@ -481,13 +513,40 @@ export default function ClineRunnerPage() {
 
         scene.add(model);
 
-        // Play ONLY the first animation at slower speed to smooth out jerky keyframes
+        // Set up all animations for cycling
         if (gltf.animations.length > 0) {
           console.log("Available animations:", gltf.animations.map((a) => a.name));
           mixer = new THREE.AnimationMixer(model);
-          const action = mixer.clipAction(gltf.animations[0]);
-          action.timeScale = 0.8; // slow down to smooth out jerkiness
-          action.play();
+
+          gltf.animations.forEach((clip) => {
+            const action = mixer!.clipAction(clip);
+            action.timeScale = currentTimeScale;
+            action.clampWhenFinished = false;
+            allActions.push(action);
+          });
+
+          // Start the first animation
+          if (allActions.length > 0) {
+            allActions[0].play();
+          }
+
+          // When an animation finishes, crossfade to the next
+          mixer.addEventListener("finished", () => {
+            if (allActions.length <= 1) return;
+            const prev = allActions[currentActionIndex];
+            currentActionIndex = (currentActionIndex + 1) % allActions.length;
+            const next = allActions[currentActionIndex];
+            next.reset();
+            next.timeScale = currentTimeScale;
+            next.crossFadeFrom(prev, 0.5, true);
+            next.play();
+          });
+
+          // Set first animation to play once then trigger cycling
+          // (set loop to LoopOnce so 'finished' fires, then we crossfade)
+          allActions.forEach((a) => {
+            a.setLoop(THREE.LoopOnce, 1);
+          });
         }
 
         setLoaded(true);
@@ -508,9 +567,22 @@ export default function ClineRunnerPage() {
       const delta = clock.getDelta();
       const elapsed = clock.getElapsedTime();
 
+      // Smoothly lerp timeScale toward tap target (or fade back to default after 5s idle)
+      const now = performance.now();
+      if (now - lastTapTime > 5000 && tapTimes.length > 0) {
+        // Fade back to default
+        targetTimeScale += (0.8 - targetTimeScale) * 0.01;
+        tapBPM += (120 - tapBPM) * 0.01;
+      }
+      currentTimeScale += (targetTimeScale - currentTimeScale) * 0.05;
+      // Update all animation actions' timeScale
+      allActions.forEach((a) => { a.timeScale = currentTimeScale; });
+
       if (mixer) mixer.update(delta);
 
-      const beat = Math.pow(Math.sin(elapsed * Math.PI * 2) * 0.5 + 0.5, 4);
+      // Beat driven by tap BPM (beats per second = BPM / 60)
+      const bps = tapBPM / 60;
+      const beat = Math.pow(Math.sin(elapsed * Math.PI * bps) * 0.5 + 0.5, 4);
 
       groundMaterial.uniforms.uTime.value = elapsed;
       groundMaterial.uniforms.uBeat.value = 0.5 + beat * 0.5;
@@ -600,6 +672,7 @@ export default function ClineRunnerPage() {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
+      renderer.domElement.removeEventListener("pointerdown", onPointerDown);
       controls.dispose();
       composer.dispose();
       renderer.dispose();
