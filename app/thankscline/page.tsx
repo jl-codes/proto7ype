@@ -128,61 +128,111 @@ export default function ClineRunnerPage() {
     scene.add(spotlight2);
     scene.add(spotlight2.target);
 
-    // ── Neon grid dance floor ────────────────────────────────────
+    // ── Dance floor with tile wave effect ────────────────────────
     const gridSegments = 80;
     const gridSize = 120;
     const groundGeometry = new THREE.PlaneGeometry(gridSize, gridSize, gridSegments, gridSegments);
     const groundMaterial = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0 },
-        uColor1: { value: new THREE.Color(0x0d0d1a) },
-        uColor2: { value: new THREE.Color(0xff00ff) },
-        uColor3: { value: new THREE.Color(0x00ffff) },
+        uBeat: { value: 0 },
         uFogColor: { value: new THREE.Color(0x0d0d1a) },
         uFogDensity: { value: 0.03 },
-        uBeat: { value: 0 },
       },
       vertexShader: `
         varying vec2 vUv;
         varying float vDist;
-        uniform float uTime;
-        uniform float uBeat;
+        varying vec2 vWorldXZ;
         void main() {
           vUv = uv;
           vec3 pos = position;
-          float dist = length(pos.xy);
-          pos.z += sin(dist * 0.5 - uTime * 2.0) * 0.08 * uBeat;
-          pos.z += sin(pos.x * 0.3 + uTime * 0.8) * 0.1;
           vec4 mvPos = modelViewMatrix * vec4(pos, 1.0);
           vDist = -mvPos.z;
+          // Pass world XZ for tile calculation (plane is XY, rotated to XZ)
+          vWorldXZ = pos.xy;
           gl_Position = projectionMatrix * mvPos;
         }
       `,
       fragmentShader: `
         varying vec2 vUv;
         varying float vDist;
+        varying vec2 vWorldXZ;
         uniform float uTime;
-        uniform vec3 uColor1;
-        uniform vec3 uColor2;
-        uniform vec3 uColor3;
+        uniform float uBeat;
         uniform vec3 uFogColor;
         uniform float uFogDensity;
-        uniform float uBeat;
+
+        // Pseudo-random based on tile position
+        float hash(vec2 p) {
+          return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+        }
+
         void main() {
-          vec2 scrollUv = vUv;
-          scrollUv.y += uTime * 0.05;
-          vec2 grid = abs(fract(scrollUv * 30.0 - 0.5) - 0.5) / fwidth(scrollUv * 30.0);
-          float line = min(grid.x, grid.y);
-          float gridLine = 1.0 - min(line, 1.0);
-          float cycle = sin(uTime * 0.5) * 0.5 + 0.5;
-          vec3 gridColor = mix(uColor2, uColor3, cycle);
-          float pulse = 0.5 + uBeat * 0.5;
-          vec3 color = mix(uColor1, gridColor, gridLine * pulse);
-          float centerDist = length(scrollUv - 0.5);
-          float glow = exp(-centerDist * 3.0) * 0.15;
-          color += gridColor * glow;
+          // Tile grid: 1.5 unit tiles
+          float tileSize = 1.5;
+          vec2 tilePos = floor(vWorldXZ / tileSize);
+          vec2 tileUv = fract(vWorldXZ / tileSize);
+
+          // Gap between tiles (dark border)
+          float gap = 0.06;
+          float isGap = step(tileUv.x, gap) + step(1.0 - gap, tileUv.x)
+                      + step(tileUv.y, gap) + step(1.0 - gap, tileUv.y);
+          isGap = clamp(isGap, 0.0, 1.0);
+
+          // Distance of this tile from center (in tile units)
+          float tileDist = length(tilePos + 0.5);
+
+          // Wave: radial pulse from center, repeating every ~3 seconds
+          float waveSpeed = 3.5;
+          float waveWidth = 3.0;
+          float wave1 = 1.0 - clamp(abs(tileDist - mod(uTime * waveSpeed, 30.0)) / waveWidth, 0.0, 1.0);
+          float wave2 = 1.0 - clamp(abs(tileDist - mod(uTime * waveSpeed + 15.0, 30.0)) / waveWidth, 0.0, 1.0);
+          float wave = max(wave1, wave2);
+
+          // Center glow (tiles near character always lit)
+          float centerGlow = exp(-tileDist * 0.3) * 0.6;
+
+          // Combine wave + center + beat
+          float brightness = centerGlow + wave * (0.6 + uBeat * 0.4);
+          brightness = clamp(brightness, 0.0, 1.0);
+
+          // Color per tile: cycle through neon palette using hash + time
+          float colorIndex = hash(tilePos) + uTime * 0.15;
+          vec3 col1 = vec3(1.0, 0.0, 1.0);   // magenta
+          vec3 col2 = vec3(0.0, 1.0, 1.0);   // cyan
+          vec3 col3 = vec3(1.0, 0.55, 0.0);  // orange
+          vec3 col4 = vec3(0.62, 0.3, 0.87); // purple
+          vec3 col5 = vec3(1.0, 0.0, 0.43);  // hot pink
+          vec3 col6 = vec3(0.98, 0.75, 0.15); // gold
+
+          float ci = mod(colorIndex * 6.0, 6.0);
+          vec3 tileColor;
+          if (ci < 1.0) tileColor = mix(col1, col2, fract(ci));
+          else if (ci < 2.0) tileColor = mix(col2, col3, fract(ci));
+          else if (ci < 3.0) tileColor = mix(col3, col4, fract(ci));
+          else if (ci < 4.0) tileColor = mix(col4, col5, fract(ci));
+          else if (ci < 5.0) tileColor = mix(col5, col6, fract(ci));
+          else tileColor = mix(col6, col1, fract(ci));
+
+          // Dark base color
+          vec3 darkTile = vec3(0.03, 0.02, 0.06);
+          vec3 gapColor = vec3(0.01, 0.01, 0.02);
+
+          // Final tile color: dark base mixed with neon based on brightness
+          vec3 color = mix(darkTile, tileColor, brightness * 0.9);
+
+          // Apply gap
+          color = mix(color, gapColor, isGap);
+
+          // Specular highlight in center of tile
+          float specDist = length(tileUv - 0.5);
+          float spec = exp(-specDist * 6.0) * brightness * 0.3;
+          color += vec3(spec);
+
+          // Fog
           float fogFactor = 1.0 - exp(-uFogDensity * vDist * vDist);
           color = mix(color, uFogColor, clamp(fogFactor, 0.0, 1.0));
+
           gl_FragColor = vec4(color, 1.0);
         }
       `,
