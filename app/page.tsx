@@ -12,6 +12,37 @@ export default function HomePage() {
       {/* Launch Party footage & studio pillars */}
       <VideoSection />
 
+      {/* Download CTA — kiosk installer */}
+      <section className="section bg-zinc-950 border-t border-zinc-800">
+        <div className="section-wide text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6 strobe-text">
+              <span className="gradient-text">RUN YOUR OWN ARCADE</span>
+            </h2>
+            <p className="text-sm sm:text-base lg:text-xl text-zinc-300 mb-6 sm:mb-10 leading-relaxed font-light px-2">
+              Download the PROTO7YPE kiosk app and turn any computer into a
+              fullscreen arcade cabinet — with credit purchases, leaderboards,
+              and 13 original games out of the box.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6">
+              <a
+                href="https://github.com/jl-codes/proto7ype-app/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary inline-block text-sm sm:text-base lg:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 font-bold tracking-widest hover:scale-105 transition-transform duration-200 w-full sm:w-auto text-center"
+              >
+                ⬇ DOWNLOAD KIOSK APP
+              </a>
+            </div>
+
+            <p className="text-xs text-zinc-500">
+              macOS (Apple Silicon &amp; Intel) · Windows · Linux · Free &amp; open-source
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA — get involved */}
       <section className="section bg-zinc-900/20 border-t border-zinc-800">
         <div className="section-wide text-center">
